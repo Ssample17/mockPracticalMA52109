@@ -27,7 +27,7 @@ def init_centroids(
         raise ValueError("k cannot be larger than the number of samples.")
 
     rng = np.random.RandomState(random_state)
-    indices = rng.choice(n_samples, size=k + 1, replace=False)
+    indices = rng.choice(n_samples, size=k, replace=False) #Changed from k+1 to k to select the correct number of data points
     return X[indices]
 
 
